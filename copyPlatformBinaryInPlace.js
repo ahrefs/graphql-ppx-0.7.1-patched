@@ -22,8 +22,12 @@ copyBinary("bin/graphql_ppx-" + platform + "-" + arch + ".exe", "ppx");
 // for backward compatibility - remove with 1.0 release
 copyBinary("bin/graphql_ppx-" + platform + "-" + arch + ".exe", "ppx6");
 
+console.log(platform, arch);
+
+
 function copyBinary(filename, destFilename) {
   var supported = fs.existsSync(filename);
+  console.log(filename);
 
   if (!supported) {
     console.error("graphql_ppx does not support this platform :(");
